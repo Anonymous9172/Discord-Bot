@@ -18,12 +18,13 @@ class WarnCommand extends commando.Command
         if(message.member.roles.find("name", "Founder")){
         let mentioned = message.mentions.users.first();
         let reason = args.slice(22) 
+        let mem = message.mentions.members.first() || message.member;
         var i = 0;
         var text = "Roll ";
         var warningEmbed = new discord.RichEmbed()
-        .setAuthor(message.author.username, message.author.avatarURL)
+        .addField('Username:', mem)
         .setTitle(`You've been warned in ${message.guild.name}`)
-        .setColor('#FFCC00')
+        .setColor('#FFe100')
         .setThumbnail(message.author.avatarURL)
         .setURL("")
         .setFooter("Created by Leon J.#9172")
