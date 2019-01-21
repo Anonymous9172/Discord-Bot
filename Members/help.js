@@ -7,7 +7,7 @@ class HelpCommand extends commando.Command
     {
         super(client,{
             name: 'help',
-            group: 'mods',
+            group: 'members',
             memberName: 'help',
             description: 'Get all the useful commands of our bot!'
         });
