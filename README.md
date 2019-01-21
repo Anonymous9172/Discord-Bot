@@ -16,3 +16,12 @@ some files where coded by me with a little help from some friends:
 Luke | Exotic Hosting #4710
 
 ManiacMiner93 #2291
+
+
+
+
+This bot is Brought to you by:
+
+AvionMoine10575 #1111 
+
+Leon J. #9172
