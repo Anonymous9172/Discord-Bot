@@ -19,7 +19,7 @@ class SuggestionCommand extends Commando.Command
          let mem = message.mentions.members.first() || message.member; 
         
        let words = args.split(' ');  
-     let reason = words.slice(0);
+     let reason = words.slice(0).join(" ");
         
         var suggestionEmbed = new Discord.RichEmbed()
        .setColor('#2327ff')
