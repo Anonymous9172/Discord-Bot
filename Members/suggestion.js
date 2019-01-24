@@ -18,13 +18,13 @@ class SuggestionCommand extends Commando.Command
       {
          let mem = message.mentions.members.first() || message.member; 
         
-       let words = args.split(' ');  
-     let reason = words.slice(0);
+       let words = args.split(' '); 
+     let reason = words.slice(0).join(" ");
         
         var suggestionEmbed = new Discord.RichEmbed()
-       .setColor('BLUE')
+        .setColor('#2df922')
         .setThumbnail(message.author.avatarURL)
-        .setTitle(`Report`)
+        .setTitle(`Suggestion`)
         .addField('Suggestion Created By:', '___ ___' + message.author)
         .addField('Suggestion:', reason) 
         //.setTimestamp()
@@ -32,11 +32,13 @@ class SuggestionCommand extends Commando.Command
 
         let incidentschannel = message.guild.channels.find(`name`, "suggestions");
         
-    if (!incidentschannel) return message.reply("Couldn't find channel `#suggestion` !");
-        
+    if (!incidentschannel) return message.reply("Couldn't find channel `#suggestion` !")
+    if(message.members)
         message.delete()
     incidentschannel.send(suggestionEmbed)
     message.author.send(`${message.author} Your suggestion has been filed! :mailbox_with_mail:`)
-      }
+        message.delete()
   }
+}
+
     module.exports =  SuggestionCommand;        
