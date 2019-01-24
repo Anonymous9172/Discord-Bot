@@ -21,8 +21,8 @@ class SuggestionCommand extends Commando.Command
        let words = args.split(' ');  
      let reason = words.slice(0).join(" ");
         
-        var suggestionEmbed = new Discord.RichEmbed()
-       .setColor('#2327ff')
+        var reportEmbed = new Discord.RichEmbed()
+       .setColor('#FF0000')
         .setThumbnail(message.author.avatarURL)
         .setTitle(`Report`)
         .addField('Reported By:', '___ ___' + message.author)
@@ -35,8 +35,8 @@ class SuggestionCommand extends Commando.Command
     if (!incidentschannel) return message.reply("Couldn't find channel `#suggestion` !");
         
         message.delete()
-    incidentschannel.send(suggestionEmbed)
-    message.author.send(`${message.author} Your suggestion has been filed! :mailbox_with_mail:`)
+    incidentschannel.send(reportEmbed)
+    message.author.send(`${message.author} Your report has been filed! :mailbox_with_mail:`)
       }
   }
     module.exports =  SuggestionCommand;        
